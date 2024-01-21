@@ -1,8 +1,18 @@
+import {Route,Routes,BrowserRouter as Router } from 'react-router-dom';
+import Layout from './components/shared/Layout';
+import Dashboard from './components/Dashboard';
+import Products from './components/Products';
 function App() {
   return (
-    <h1 className="text-3xl font-bold underline bg-green-400">
-    Hello world!
-  </h1>
+    <Router>
+      <Routes>
+        <Route path='/' element={<Layout/>}>
+        <Route index element= {<Dashboard/>} />
+        <Route path='products' element= {<Products/>} />
+        </Route>
+        <Route path='login' element={<div> this is login page</div>}/>
+   </Routes>
+    </Router>
   )
 }
 
